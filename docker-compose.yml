@@ -1,11 +1,15 @@
 networks:
-  my_network:
+  mynet:
     enable_ipv6: true
+    ipam:
+      config:
+        - subnet: 2001:0db8::/64
 
 services:
   web:
     build: .
+    container_name: ws
     ports:
       - "8888:8888"
     networks:
-      - my_network
+      - mynet
