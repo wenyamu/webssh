@@ -1,6 +1,8 @@
 networks:
   mynet6:
+    name: ipv6net
     enable_ipv6: true
+    driver: bridge
 
 services:
   web:
