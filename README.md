@@ -50,14 +50,19 @@ Version: 6.4.1
 # 创建镜像
 docker build -t webssh:tag .
 
-# 创建支持 ipv6 的网络
-docker network create --ipv6 my_network
+# 创建支持 ipv6 的网络名称 ipv6net
+docker network create --ipv6 ipv6net
 
 # 创建容器
-docker run -itd --network my_network --name ws -p 8888:8888 webssh:tag
+docker run -itd --network ipv6net --name ws -p 8888:8888 webssh:tag
 ```
 ## 方式二：
 > docker compose 创建镜像和创建容器一条命令即可
 ```
 docker compose up -d
+```
+# 注意
+> 删除容器时，网络名也要删除，不然下次创建容器时，再次使用这个网络。ssh 连接 ipv6 服务器会失效
+```
+docker rm -f ws && docker network rm ipv6net
 ```
