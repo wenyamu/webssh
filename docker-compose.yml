@@ -1,6 +1,11 @@
-version: '3'
+networks:
+  my_network:  
+    enable_ipv6: true
+
 services:
   web:
     build: .
     ports:
-    - "8888:8888"
+      - "8888:8888"
+    networks:
+      - my_network
