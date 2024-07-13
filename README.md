@@ -37,5 +37,18 @@ Version: 3.4.0
 root@localhost:~# pip show tornado
 Name: tornado
 Version: 6.4.1
-
 ```
+
+# docker 部署
+```
+
+# 创建支持 ipv6 的网络
+docker network create --ipv6 my_network
+
+# 创建容器
+docker run -itd --network my_network --name ws -v /root/ws:/ws -p 8888:8888 python:3-alpine
+
+iptables -I INPUT -p tcp --dport 8888 -j ACCEPT
+```
+
+
