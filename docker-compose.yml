@@ -1,5 +1,5 @@
 networks:
-  my_network:  
+  my_network:
     enable_ipv6: true
 
 services:
