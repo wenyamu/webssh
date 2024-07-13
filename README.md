@@ -13,6 +13,8 @@ iptables -I INPUT -p tcp --dport 8888 -j ACCEPT
 ## 安装 python3 模块
 ```
 pip install paramiko tornado
+# 或者
+pip install -r requirements.txt
 ```
 ## 运行 python3 程序
 ```
