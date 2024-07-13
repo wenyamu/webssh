@@ -6,6 +6,7 @@ networks:
 
 services:
   web:
+    # 存在 build 时 此为创建的镜像名；没有 build 时，此为要拉取的镜像名
     image: webssh:latest
     build: .
     container_name: ws
