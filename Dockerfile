@@ -5,7 +5,8 @@ ADD ./webssh /webssh/
 ADD ./run.py /
 ADD ./requirements.txt /
 
-RUN apt update && apt install --no-install-recommends -y supervisor net-tools && \
+RUN apt update && \
+    apt install --no-install-recommends -y supervisor && \
     pip install -r requirements.txt --no-cache-dir && \
     apt clean -y && \
     apt autoclean -y && \
