@@ -40,15 +40,19 @@ Version: 6.4.1
 ```
 
 # docker 部署
+## 方式一：
 ```
+# 创建镜像
+docker build -t webssh:tag .
 
 # 创建支持 ipv6 的网络
 docker network create --ipv6 my_network
 
 # 创建容器
-docker run -itd --network my_network --name ws -v /root/ws:/ws -p 8888:8888 python:3-alpine
-
-iptables -I INPUT -p tcp --dport 8888 -j ACCEPT
+docker run -itd --network my_network --name ws -p 8888:8888 webssh:tag
 ```
-
-
+## 方式二：
+> docker compose 创建镜像和创建容器一条命令即可
+```
+docker compose up -d
+```
