@@ -1,5 +1,5 @@
 # web版 ssh 连接服务器，支持仅有ipv6的服务器
-
+> 整理自 `https://github.com/huashengdun/webssh` 项目
 ## 把项目下载到本地并进入目录
 ```
 apt install -y git && \
