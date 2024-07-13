@@ -6,6 +6,7 @@ networks:
 
 services:
   web:
+    image: webssh:latest
     build: .
     container_name: ws
     ports:
