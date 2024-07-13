@@ -8,7 +8,9 @@ services:
   web:
     # 存在 build 时 此为创建的镜像名；没有 build 时，此为要拉取的镜像名
     image: webssh:latest
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: ws
     ports:
       - "8888:8888"
