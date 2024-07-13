@@ -40,6 +40,11 @@ Version: 6.4.1
 ```
 
 # docker 部署
+> `docker network ls` # 查看所有网络
+> 
+> `docker network rm my_network` # 删除某个网络
+> 
+> `docker network inspect my_network` # 查看网络信息
 ## 方式一：
 ```
 # 创建镜像
