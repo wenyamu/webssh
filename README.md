@@ -4,8 +4,8 @@
 ## 把项目下载到本地并进入目录
 ```
 apt install -y git && \
-git clone https://github.com/wenyamu/webssh.git && \
-cd webssh
+git clone https://github.com/wenyamu/webssh.git /root/webssh&& \
+cd /root/webssh
 ```
 ## 放行端口
 ```
