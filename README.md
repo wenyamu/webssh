@@ -1,33 +1,17 @@
 # web版 ssh 连接服务器，支持 ipv6
 > 整理自 `https://github.com/huashengdun/webssh` 项目
 
+## 成功测试环境
+> Python 3.9.2
+> paramiko 3.4.0
+> tornado 6.4.1
+
 ## 把项目下载到本地并进入目录
 ```
 apt install -y git && \
 git clone https://github.com/wenyamu/webssh.git /root/webssh && \
-cd /root/webssh
-```
-## 放行端口
-```
-iptables -I INPUT -p tcp --dport 8888 -j ACCEPT
-ip6tables -I INPUT -p tcp --dport 8888 -j ACCEPT
-```
-## 访问
-```
-http://0.0.0.0:8888
-```
-## 测试环境
-```
-root@localhost:~# python3 -V
-Python 3.9.2
-
-root@localhost:~# pip show paramiko
-Name: paramiko
-Version: 3.4.0
-
-root@localhost:~# pip show tornado
-Name: tornado
-Version: 6.4.1
+cd /root/webssh && \
+bash docker-ce.sh
 ```
 
 # docker 部署
@@ -41,24 +25,20 @@ Version: 6.4.1
 # 创建镜像
 docker build -t webssh:tag .
 
-# 创建支持 ipv6 的网络名称 ipv6net(这是关键，支持 ipv6 的 ssh 连接就是这里)
-docker network create --ipv6 ipv6net
-
-# 创建容器
-docker run -itd --network ipv6net --name ws -p 8888:8888 webssh:tag
+# 创建容器( --network host 这是关键，容器与宿主机共享网格，支持 ipv6 的 ssh 连接就是这里)
+docker run -itd --network host --name ws -p 8888:8888 webssh:tag
 ```
 ## 方式二：
 > docker compose 创建镜像和创建容器一条命令即可
 ```
 docker compose up -d
 ```
-
-# 注意
-> 删除容器时，网络名也要删除，不然下次创建容器时，再次使用这个网络。ssh 连接 ipv6 服务器会失效
+## 放行端口
 ```
-docker rm -f ws && docker network rm ipv6net
+iptables -I INPUT -p tcp --dport 8888 -j ACCEPT
+ip6tables -I INPUT -p tcp --dport 8888 -j ACCEPT
 ```
-> 重启容器后 ssh 连接 ipv6 服务器也会失效。需要重启 docker 
+## 访问
 ```
-systemctl restart docker
+http://0.0.0.0:8888
 ```
