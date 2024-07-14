@@ -15,6 +15,8 @@ git clone https://github.com/wenyamu/webssh.git /root/webssh && \
 cd /root/webssh && \
 bash docker-ce.sh
 ```
+## 修改配置文件
+> 把 `default.conf` 中的 `server_name  ssh.site.com;` 替换为你的域名
 
 # docker 部署
 ## 方式一：
