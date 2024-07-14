@@ -8,7 +8,7 @@ services:
   webssh:
     # 如果镜像存在于 docker hub 上就会拉取（当拉取成功时，创建容器就会使用此镜像），不管上下文有没有 build 项
     # 如果 docker hub 上没有此镜像，且上下文中有 build 项，会作为即将被创建的镜像名称
-    image: webssh:latest
+    image: webssh:xxx
     build:
       context: .
       dockerfile: Dockerfile
@@ -23,7 +23,6 @@ services:
         # 映射端口 【宿主机端口:容器端口】
         ports:
             - "80:80"
-            - "443:443"
         # 容器名称
         container_name: test
         volumes:
