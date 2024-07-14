@@ -6,7 +6,8 @@ networks:
 
 services:
   web:
-    # 存在 build 时 此为创建的镜像名；没有 build 时，此为要拉取的镜像名
+    # 如果镜像存在于 docker hub 上就会拉取（当拉取成功时，创建容器就会使用此镜像），不管上下文有没有 build 项
+    # 如果 docker hub 上没有此镜像，且上下文中有 build 项，会作为即将被创建的镜像名称
     image: webssh:latest
     build:
       context: .
