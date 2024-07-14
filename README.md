@@ -17,18 +17,13 @@ bash docker-ce.sh
 ```
 
 # docker 部署
-> `docker network ls` # 查看所有网络
-> 
-> `docker network rm my_network` # 删除某个网络
-> 
-> `docker network inspect my_network` # 查看网络信息
 ## 方式一：
 ```
 # 创建镜像
 docker build -t webssh:tag .
 
 # 创建容器( --network host 这是关键，容器与宿主机共享网格，支持 ipv6 的 ssh 连接就是这里)
-docker run -itd --network host --name ws -p 8888:8888 webssh:tag
+docker run -itd --network host --name ws webssh:tag
 ```
 ## 方式二：
 > docker compose 创建镜像和创建容器一条命令即可
