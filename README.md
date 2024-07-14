@@ -2,8 +2,10 @@
 > 整理自 `https://github.com/huashengdun/webssh` 项目
 
 ## 成功测试环境
-> Python 3.9.2
+> python 3.9.2
+> 
 > paramiko 3.4.0
+> 
 > tornado 6.4.1
 
 ## 把项目下载到本地并进入目录
