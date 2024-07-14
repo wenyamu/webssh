@@ -62,8 +62,13 @@ docker run -itd --network ipv6net --name ws -p 8888:8888 webssh:tag
 ```
 docker compose up -d
 ```
+
 # 注意
 > 删除容器时，网络名也要删除，不然下次创建容器时，再次使用这个网络。ssh 连接 ipv6 服务器会失效
 ```
 docker rm -f ws && docker network rm ipv6net
+```
+> 重启容器后 ssh 连接 ipv6 服务器也会失效。需要重启 docker 
+```
+systemctl restart docker
 ```
