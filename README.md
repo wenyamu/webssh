@@ -35,7 +35,6 @@ docker compose up -d
 ## 放行端口
 ```
 iptables -I INPUT -p tcp --dport 8888 -j ACCEPT
-ip6tables -I INPUT -p tcp --dport 8888 -j ACCEPT
 ```
 ## 访问
 ```
