@@ -17,7 +17,7 @@ RUN apt update && \
 ADD ./supervisor/supervisord.conf /etc/supervisor/
 ADD ./supervisor/services /etc/supervisor/conf.d/
 
-COPY entrypoint.sh /usr/sbin/entrypoint.sh
-RUN chmod +x /usr/sbin/entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
-CMD ["/usr/sbin/entrypoint.sh"]
+CMD ["/entrypoint.sh"]
