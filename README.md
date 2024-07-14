@@ -50,7 +50,7 @@ Version: 6.4.1
 # 创建镜像
 docker build -t webssh:tag .
 
-# 创建支持 ipv6 的网络名称 ipv6net
+# 创建支持 ipv6 的网络名称 ipv6net(这是关键，支持 ipv6 的 ssh 连接就是这里)
 docker network create --ipv6 ipv6net
 
 # 创建容器
