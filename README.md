@@ -12,16 +12,6 @@ cd /root/webssh
 iptables -I INPUT -p tcp --dport 8888 -j ACCEPT
 ip6tables -I INPUT -p tcp --dport 8888 -j ACCEPT
 ```
-## 安装 python3 模块
-```
-pip install --no-cache-dir paramiko==3.4.0 tornado==6.4.1
-# 或者
-pip install -r requirements.txt --no-cache-dir
-```
-## 运行 python3 程序
-```
-python3 run.py
-```
 ## 访问
 ```
 http://0.0.0.0:8888
