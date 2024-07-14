@@ -10,6 +10,7 @@ cd /root/webssh
 ## 放行端口
 ```
 iptables -I INPUT -p tcp --dport 8888 -j ACCEPT
+ip6tables -I INPUT -p tcp --dport 8888 -j ACCEPT
 ```
 ## 安装 python3 模块
 ```
