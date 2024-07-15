@@ -2,6 +2,8 @@
 > 整理自 `https://github.com/huashengdun/webssh` 项目
 
 ## 成功测试环境
+> debian amd64(ipv4 & ipv6)
+> 
 > python 3.9.2
 > 
 > paramiko 3.4.0
