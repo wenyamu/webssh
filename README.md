@@ -13,7 +13,7 @@
 ## 一键部署
 ```
 apt install -y git && \
-bash docker-ce.sh && \
+curl -L https://github.com/wenyamu/docker/releases/download/v1.0.0/docker-ce.sh | bash && \
 iptables -I INPUT -p tcp --dport 8888 -j ACCEPT && \
 git clone https://github.com/wenyamu/webssh.git /root/webssh && \
 cd /root/webssh && \
