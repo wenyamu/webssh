@@ -13,10 +13,10 @@
 ## 一键部署
 ```
 apt install -y git && \
-git clone https://github.com/wenyamu/webssh.git /root/webssh && \
-cd /root/webssh && \
 bash docker-ce.sh && \
 iptables -I INPUT -p tcp --dport 8888 -j ACCEPT && \
+git clone https://github.com/wenyamu/webssh.git /root/webssh && \
+cd /root/webssh && \
 docker compose up -d
 ```
 ## 修改配置文件
