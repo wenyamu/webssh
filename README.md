@@ -19,9 +19,11 @@ git clone https://github.com/wenyamu/webssh.git /root/webssh && \
 cd /root/webssh && \
 docker compose up -d
 ```
-## 修改配置文件
+## 修改配置文件，并重启容器
 > 把 `default.conf` 中的 `server_name  ssh.site.com;` 替换为你的域名
-
+```
+docker restart ng
+```
 ## 或者你可以手动部署
 ```
 # 创建镜像
