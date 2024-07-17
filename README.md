@@ -39,5 +39,11 @@ http://0.0.0.0:8888
 http://ssh.site.com
 ```
 
-## 其它类似项目, 支持 sftp 文件上传和下载
+## 其它类似项目
 > https://github.com/Jrohy/webssh
+> 
+> 支持 sftp
+> 
+> 支持 标签页
+> 
+
