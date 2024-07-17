@@ -38,3 +38,6 @@ http://0.0.0.0:8888
 # 或者通过域名
 http://ssh.site.com
 ```
+
+## 其它类似项目, 支持 sftp 文件上传和下载
+> https://github.com/Jrohy/webssh
