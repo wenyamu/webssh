@@ -42,8 +42,7 @@ http://ssh.site.com
 ## 其它类似项目
 > https://github.com/Jrohy/webssh
 > 
-> 支持 sftp
+> 支持 sftp（文件上传和下载）
 > 
-> 支持 标签页
+> 支持 多标签页（多个ssh连接时，每个连接一个标签页）
 > 
-
