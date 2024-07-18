@@ -74,7 +74,16 @@ docker run -itd --net host --name ws webssh:tag
 
 ```
 docker network create --ipv6 ipv6test && \
-docker run -d -p 5032:5032 --log-driver json-file --log-opt max-file=1 --log-opt max-size=100m --restart always --name webssh -e TZ=Asia/Shanghai jrohy/webssh
+docker run -d \
+-p 5032:5032 \
+--net ipv6test \
+--log-driver json-file \
+--log-opt max-file=1 \
+--log-opt max-size=100m \
+--restart always \
+--name webssh \
+-e TZ=Asia/Shanghai \
+jrohy/webssh
 ```
 
 ### 2 https://github.com/nirui/sshwifty
