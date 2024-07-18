@@ -74,6 +74,7 @@ docker run -itd --net host --name ws webssh:tag
 >
 > 页面底部显示正常，不需要放大页面，也能全部显示
 
+#### docker 运行
 ```
 docker network create --ipv6 ipv6test && \
 docker run -d \
@@ -88,7 +89,12 @@ docker run -d \
 -e savePass=true \
 jrohy/webssh
 ```
-
+#### 支持添加的环境变量:
+```
+port: web使用端口, 默认5032
+savePass: 是否保存密码, 默认true
+authInfo: 开启账号密码登录验证, 'user:pass'的格式设置
+```
 ### 2 https://github.com/nirui/sshwifty
 > 必须配置 ssl https 才可以访问
 
