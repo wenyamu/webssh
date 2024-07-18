@@ -10,6 +10,11 @@
 > 
 > tornado 6.4.1
 
+# 使用方式一
+> 缺点：使用 --net host 模式生成容器，有个缺点就是会暴露宿主机的 ipv4 和 ipv6 地址
+>
+> 优点：重启容器不会影响 ipv6 的使用
+
 ## 一键部署
 ```
 apt install -y git && \
@@ -24,19 +29,37 @@ docker compose up -d
 ```
 docker restart ng
 ```
-## 或者你可以手动部署
-```
-# 创建镜像
-docker build -t webssh:tag .
 
-# 创建容器( --network host 这是关键，容器与宿主机共享网格，支持 ipv6 的 ssh 连接就是这里)
-docker run -itd --network host --name ws webssh:tag
-```
 ## 访问
 ```
 http://0.0.0.0:8888
 # 或者通过域名
 http://ssh.site.com
+```
+# 使用方式二
+> 缺点：容器首次运行时一切正常，但当重启 webssh 容器后，必须执行一次 `systemctl restart docker` 重启 docker 才能使用 ipv6
+>
+> 优点：不会暴露宿主机的真实ip
+
+## 部署
+```
+# 创建镜像
+docker build -t webssh:tag .
+
+# 创建ipv6网络
+docker network create --ipv6 ipv6test
+
+# 创建容器
+docker run -itd --net ipv6test -p 8000:8000 --name ws webssh:tag
+```
+## 如果执行 `systemctl restart docker` 重启 docker 时，不想让容器也跟着重启，可以写入以下配置项
+> 以下配置需要 `systemctl restart docker` 执行后生效
+```
+cat > /etc/docker/daemon.json << EOF
+{
+  "live-restore": true
+}
+EOF
 ```
 
 ## 其它类似项目
