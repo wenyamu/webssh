@@ -19,6 +19,8 @@ services:
       dockerfile: Dockerfile
     # host 使用宿主机的网络环境，宿主机有 ipv4 和 ipv6，webssh 容器就不需要再开启 ipv6
     #network_mode: host
+    ports:
+        - "8888:8888"
     container_name: ws
     restart: always
     networks:
