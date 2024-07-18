@@ -64,7 +64,7 @@ docker run -itd --net host --name ws webssh:tag
 ```
 
 # 其它类似项目
-> 推荐项目1 用法与 `huashengdun/webssh` 一样，功能更多
+> 推荐项目1： go语言编写，用法与 `huashengdun/webssh` 一样，功能更多
 
 ### 项目1 https://github.com/Jrohy/webssh
 
