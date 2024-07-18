@@ -27,9 +27,9 @@ EOF
 
 ## 一键部署
 ```
-apt install -y git && \
 curl -L https://github.com/wenyamu/docker/releases/download/v1.0.0/docker-ce.sh | bash && \
 iptables -I INPUT -p tcp --dport 8888 -j ACCEPT && \
+apt install -y git && \
 git clone https://github.com/wenyamu/webssh.git /root/webssh && \
 cd /root/webssh && \
 docker compose up -d
