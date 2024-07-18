@@ -71,6 +71,8 @@ docker run -itd --net host --name ws webssh:tag
 > 支持 多标签页（每个连接一个标签页，对标签进行操作，比如：复制标签、移动标签、重命名标签、全屏、关闭左边，关闭右边等）
 > 
 > 支持 ipv6
+>
+> 页面底部显示正常，不需要放大页面，也能全部显示
 
 ```
 docker network create --ipv6 ipv6test && \
