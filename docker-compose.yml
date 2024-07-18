@@ -18,11 +18,11 @@ services:
       # 创建镜像的文本名称
       dockerfile: Dockerfile
     # host 使用宿主机的网络环境，宿主机有 ipv4 和 ipv6，webssh 容器就不需要再开启 ipv6
-    network_mode: host
+    #network_mode: host
     container_name: ws
     restart: always
-    #networks:
-    #    - wsnet
+    networks:
+        - wsnet
 
   nginx:
     image: nginx:1.25-alpine
