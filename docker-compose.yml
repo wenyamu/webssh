@@ -17,7 +17,7 @@ services:
       context: .
       # 创建镜像的文本名称
       dockerfile: Dockerfile
-    # --net host 模式 使用宿主机的网络环境，宿主机有 ipv4 和 ipv6，webssh 容器就不需要再开启 ipv6
+    # --net host 模式 使用宿主机的网络环境，宿主机有 ipv4 和 ipv6，webssh 容器就不需要再开启 ipv6(也不需要再映射端口)
     #network_mode: host
     ports:
         - "8888:8888"
