@@ -2,7 +2,7 @@ networks:
   wsnet:
     # 自定义的网络名称，通过 docker network ls 查看 name
     name: websshnet
-    # 为 webssh 容器开启ipv6，不重启容器是正常的；但当容器重启后，ssh ipv6 访问将失效，必须重启docker进程才行（所以以下使用 --network host 模式就不会有问题）
+    # 为 webssh 容器开启ipv6，不重启容器是正常的；但当容器重启后，ssh ipv6 访问将失效，必须重启docker进程才行（使用 --net host 模式就不会有问题）
     enable_ipv6: true
   ngnet:
     name: nginxnet
@@ -17,7 +17,7 @@ services:
       context: .
       # 创建镜像的文本名称
       dockerfile: Dockerfile
-    # host 使用宿主机的网络环境，宿主机有 ipv4 和 ipv6，webssh 容器就不需要再开启 ipv6
+    # --net host 模式 使用宿主机的网络环境，宿主机有 ipv4 和 ipv6，webssh 容器就不需要再开启 ipv6
     #network_mode: host
     ports:
         - "8888:8888"
