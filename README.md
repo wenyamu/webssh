@@ -15,7 +15,7 @@
 >
 > 优点：不会暴露宿主机的真实ip
 
-## 重启 docker 时，不想让其他容器也跟着重启，可以写入以下配置项
+## 重启 docker 时，不想让其他容器也跟着重启，可以添加以下配置项
 > 以下配置需要 `systemctl restart docker` 执行后生效
 ```
 cat > /etc/docker/daemon.json << EOF
