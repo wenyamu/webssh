@@ -52,7 +52,7 @@ docker network create --ipv6 ipv6test
 # 创建容器
 docker run -itd --net ipv6test -p 8000:8000 --name ws webssh:tag
 ```
-## 如果执行 `systemctl restart docker` 重启 docker 时，不想让容器也跟着重启，可以写入以下配置项
+## 重启 docker 时，不想让容器也跟着重启，可以写入以下配置项
 > 以下配置需要 `systemctl restart docker` 执行后生效
 ```
 cat > /etc/docker/daemon.json << EOF
