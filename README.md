@@ -63,7 +63,7 @@ docker build -t webssh:tag .
 docker run -itd --net host --name ws webssh:tag
 ```
 
-## 其它类似项目(推荐1 用法与上面的一样，功能比上面的多)
+# 其它类似项目(推荐1 用法与上面的一样，功能比上面的多)
 ### 1 https://github.com/Jrohy/webssh
 > 支持 sftp（文件上传和下载）
 > 
