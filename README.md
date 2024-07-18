@@ -85,6 +85,7 @@ docker run -d \
 --restart always \
 --name webssh \
 -e TZ=Asia/Shanghai \
+-e savePass=true \
 jrohy/webssh
 ```
 
