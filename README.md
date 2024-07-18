@@ -63,8 +63,8 @@ docker build -t webssh:tag .
 docker run -itd --net host --name ws webssh:tag
 ```
 
-# 其它类似项目(推荐1 用法与上面的一样，功能比上面的多)
-### 1 https://github.com/Jrohy/webssh
+# 其它类似项目(推荐项目1 用法与上面的一样，功能比上面的多)
+### 项目1 https://github.com/Jrohy/webssh
 
 > 支持 sftp（文件上传和下载）
 > 
@@ -95,8 +95,8 @@ port: web使用端口, 默认5032
 savePass: 是否保存密码, 默认true
 authInfo: 开启账号密码登录验证, 'user:pass'的格式设置
 ```
-### 2 https://github.com/nirui/sshwifty
+### 项目2 https://github.com/nirui/sshwifty
 > 必须配置 ssl https 才可以访问
 
-### 3 https://github.com/billchurch/webssh2
+### 项目3 https://github.com/billchurch/webssh2
 > 用法有点复杂，不知道搞这么复杂干嘛，很无语
