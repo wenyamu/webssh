@@ -65,13 +65,17 @@ docker run -itd --net host --name ws webssh:tag
 
 # 其它类似项目(推荐1 用法与上面的一样，功能比上面的多)
 ### 1 https://github.com/Jrohy/webssh
-> docker run -d -p 5032:5032 --log-driver json-file --log-opt max-file=1 --log-opt max-size=100m --restart always --name webssh -e TZ=Asia/Shanghai jrohy/webssh
-> 
+
 > 支持 sftp（文件上传和下载）
 > 
 > 支持 多标签页（每个连接一个标签页，对标签进行操作，比如：复制标签、移动标签、重命名标签、全屏、关闭左边，关闭右边等）
 > 
 > 支持 ipv6
+
+```
+docker network create --ipv6 ipv6test && \
+docker run -d -p 5032:5032 --log-driver json-file --log-opt max-file=1 --log-opt max-size=100m --restart always --name webssh -e TZ=Asia/Shanghai jrohy/webssh
+```
 
 ### 2 https://github.com/nirui/sshwifty
 > 必须配置 ssl https 才可以访问
