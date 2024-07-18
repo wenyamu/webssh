@@ -37,7 +37,7 @@ http://0.0.0.0:8888
 http://ssh.site.com
 ```
 # 使用方式二
-> 缺点：容器首次运行时一切正常，但当重启 webssh 容器后，必须执行一次 `systemctl restart docker` 重启 docker 才能使用 ipv6
+> 缺点：容器首次运行时一切正常，但当重启 webssh 容器后，必须执行一次 `systemctl restart docker` 重启 docker 才能使用 ipv6（但是重启宿主机，不影响 ipv6 的使用，不知道这里问题出在哪里）
 >
 > 优点：不会暴露宿主机的真实ip
 
