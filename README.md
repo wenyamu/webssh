@@ -75,6 +75,8 @@ docker run -itd --net host --name ws webssh:tag
 > 支持 ipv6
 >
 > 页面底部显示正常，不需要放大页面，也能全部显示
+>
+> 密钥方式登录(点击前端页面顶部的 `password` 字段切换密码/密钥)
 
 #### docker 运行
 ```
